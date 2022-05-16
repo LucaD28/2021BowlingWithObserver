@@ -1,6 +1,8 @@
 package nl.hhs;
 
-public class Lane {
+import java.util.Observable;
+
+public class Lane extends Observable {
 
 	private int number;
 	private boolean occupied;
@@ -23,5 +25,7 @@ public class Lane {
 	public void setOccupied (boolean occupied)
 	{
 		this.occupied = occupied;
+		setChanged();
+		notifyObservers();
 	}
 }
